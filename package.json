@@ -1,0 +1,14 @@
+{
+  "name": "angular-boomerang-cache",
+  "version": "1.0.0",
+  "description": "UDN Api",
+  "author": "Feyyaz Akkuş",
+  "licence": "MIT",
+  "main": "server.js",
+  "scripts": {},
+  "repository": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "*"
+  }
+}

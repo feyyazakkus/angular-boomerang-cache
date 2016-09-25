@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="angularBoomerangCacheExample">
+<head>
+	<title>Angular Boomerang Cache Example</title>
+
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+<body ng-controller="MainCtrl">
+    <div class="container">
+        <header class="jumbotron hero-spacer">
+            <h2>Angular Boomerang Cache Example</h2>
+            <p>In this example we basicly making a http get request to api and save the response as json data in localStorage.</p>
+            <p>We use https://swapi.co api which returns all Star Wars informations as json data.</p>
+        </header>
+
+    	<div class="row">
+        	<div class="col-md-6">
+        		<h3>$http.get request</h3>
+        		<div class="form-inline">
+        			<button class="btn btn-primary btn-large" ng-click="getCharactersFromApi()">Get Star Wars Characters</button>	
+        			<button class="btn btn-primary btn-large" ng-click="resetApi()">Reset Data</button>
+        		</div>
+        		
+        		<hr>
+        		<div class="text-center"><img src="loader.gif" ng-if="loading"></div>
+        		<div ng-if="!loading">
+        			<pre> {{apiData | json}} </pre>	
+        		</div>
+        	</div>
+        	<div class="col-md-6">
+        		<h3>BoomerangCache</h3>
+        		<div class="form-inline">
+        			<button class="btn btn-primary btn-large" ng-click="getCharactersFromCache()">Get Star Wars Characters</button>
+        			<button class="btn btn-primary btn-large" ng-click="resetCache()">Reset Data</button>
+        			<button class="btn btn-primary btn-large" ng-click="clearCache()">Clear Cache</button>	
+        		</div>
+        		<hr>
+        		<pre> {{cacheData | json}} </pre>
+        	</div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="../src/angular-boomerang-cache.js"></script>
+
+</html>
